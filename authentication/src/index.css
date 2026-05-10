@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --app-surface: rgba(255, 255, 255, 0.78);
+  --app-border: rgba(148, 163, 184, 0.22);
+}
+
+@layer base {
+  html {
+    background: #e2e8f0;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: #0f172a;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(250, 204, 21, 0.24), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.2), transparent 34%),
+      linear-gradient(135deg, #f8fafc 0%, #dbeafe 46%, #fff7ed 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(15, 23, 42, 0.12);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[32px] border backdrop-blur-xl;
+    background: var(--app-surface);
+    border-color: var(--app-border);
+    box-shadow: 0 30px 70px -40px rgba(15, 23, 42, 0.55);
+  }
+
+  .stat-card {
+    @apply rounded-[24px] border p-4;
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(226, 232, 240, 0.95);
+    box-shadow: 0 18px 50px -36px rgba(15, 23, 42, 0.45);
+  }
+
+  .font-display {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: -0.03em;
+  }
+}
